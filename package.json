@@ -1,0 +1,15 @@
+{
+  "name": "minimal-editor-plugin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./sources/index.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gl-matrix": "^3.4.3"
+  },
+  "3dverse-dev-tools": {
+    "port": 4502
+  }
+}
