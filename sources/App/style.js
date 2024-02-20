@@ -54,6 +54,10 @@ export const Column = styled(Box)`
         margin-top: 20px;    /* Add more styles as needed */
     }
 
+    p.red-text {
+        color: red;
+    }
+
     .margin-bottom {
         margin-bottom: 2rem;
     }
