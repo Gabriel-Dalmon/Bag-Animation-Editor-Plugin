@@ -85,6 +85,7 @@ export default class App extends React.Component
        }
     }
 
+    //--------------------------------------------------------------------------
     playPressAnim = async () =>
     {
         SDK3DVerse.engineAPI.playAnimationSequence(
@@ -108,9 +109,11 @@ export default class App extends React.Component
                 playbackSpeed: this.state.bagPlayBackSpeed,
             }
         );
+        // Activate the press after 15.6 seconds when the bag is below the press
         setTimeout(() => {
             this.playPressAnim();
         }, 15600 / this.state.bagPlayBackSpeed);
+        // Stop the bag animation after 23 seconds
         setTimeout(() => {
             SDK3DVerse.engineAPI.stopAnimationSequence(bagAnimUUID);
         }, 23000 / this.state.bagPlayBackSpeed);
@@ -191,7 +194,7 @@ export default class App extends React.Component
                         }}
                         value={this.state.bagSpawnSpeed}
                         onChange={event => this.setState({
-                            bagSpawnSpeed: Math.max(event.target.value, 23000 / this.state.bagPlayBackSpeed / this.state.bagAnimSeqPool.length)})}
+                            bagSpawnSpeed: Math.max(event.target.value, 23000 / this.state.bagPlayBackSpeed / this.state.bagAnimSeqPool.length + 100)})}
                     />
                     <TextField
                         id="outlined-number"
